@@ -83,7 +83,7 @@ function update()
 	video:DrawSprite(vec2(5,5), spriteSheet, 0, 0, color.white, color.clear)
 end
 ```
-![Example sprite asset](../../../.github/assets/docs/ExampleImageAsset.png)
+<img src="../../../.github/assets/docs/ExampleImageAsset.png" style="max-width: 400px">
 
 <img src="../../../.github/assets/docs/SpriteFont.png" width="200" align="right">
 
