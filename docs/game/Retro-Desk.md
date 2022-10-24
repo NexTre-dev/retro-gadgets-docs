@@ -3,7 +3,7 @@ Retro Gadgets takes place in, well... on a Retro Desk!
 The Retro Desk has **2 modes**: MultiTool Mode and Building Mode.
 
 ## Building Mode
-<img src="./../../.github/screenshots/building-mode.png" width="600px">
+<img src="./../../.github/screenshots/building-mode.png" width="1000px">
 
 <div align="center">
 <table>
