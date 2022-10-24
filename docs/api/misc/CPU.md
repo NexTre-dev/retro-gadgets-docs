@@ -1,7 +1,9 @@
 # CPU
+
 <img src="https://docs.retrogadgets.game/api/modules/CPU.png" width="200" align="right">
 
 The CPU is responsible for most gadget interactivity and runs Lua asset files. CPUs (currently) do not need to be connected to or on the board of any part of the gadget they interact with. They can currently load a single Lua asset.
+
 ## Properties
 
 ### Source - `Code` **[Read only]**
@@ -21,7 +23,8 @@ The time elapsed since the last tick, expressed in seconds. Essentially, this is
 ```lua
 local cpu:CPU = gdt.CPU0
 function update()
-	log(tostring(cpu.DeltaTime)) --At 60/60 tps, this is roughly 0.01666 repeating. An example real value is: 0.01600000075995922
+	log(tostring(cpu.DeltaTime)) --At 60/60 tps, this is roughly 0.01666 repeating.
+	--An example real value is: 0.01600000075995922
 end
 ```
 
