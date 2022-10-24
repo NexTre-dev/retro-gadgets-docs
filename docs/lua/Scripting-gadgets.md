@@ -27,7 +27,7 @@ You can now put the cover back by dragging it back down onto the board.
 Now that you've built your gadget, it's time to program it!
 Let's start by opening MultiTool: drag the handle to the right.
 
-You will most likely see your gadget in the following way:
+You will most likely see your gadget in the following way:  
 <img src="./../../.github/screenshots/gadget-multitool.png" width="300">
 
 Let's open the CPU's Lua script by clicking on "Assets", then double-clicking on "CPU0.lua".
