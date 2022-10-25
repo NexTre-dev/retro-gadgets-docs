@@ -1,0 +1,150 @@
+# KeyboardChip
+
+<img src="https://docs.retrogadgets.game/api/modules/KeyboardChip.png" width="200" align="right">
+
+The KeyboardChip is used to get input from a connected keyboard.
+
+***⚠️ I don't know how this thing works and it has no official documentation.***
+
+## Methods
+
+### GetButton(name `InputName`) `InputSource`
+
+### GetButtonAxis(name `InputName`) `InputSource`
+
+## Input Names **[Read only]**
+Input names can be accessed by `KeyboardChip.`nameOfInput, and are listed below.
+ - `Return`
+ - `Space`
+ - `LeftArrow`
+ - `RightArrow`
+ - `DownArrow`
+ - `UpArrow`
+ - `Backspace`
+ - `Escape`
+ - `Tab`
+ - `Clear`
+ - `Pause`
+ - `Exclaim`
+ - `DoubleQuote`
+ - `Hash`
+ - `Dollar`
+ - `Percent`
+ - `Ampersand`
+ - `Quote`
+ - `LeftParen`
+ - `RightParen`
+ - `Asterisk`
+ - `Plus`
+ - `Comma`
+ - `Minus`
+ - `Period`
+ - `Slash`
+ - `Alpha0`
+ - `Alpha1`
+ - `Alpha2`
+ - `Alpha3`
+ - `Alpha4`
+ - `Alpha5`
+ - `Alpha6`
+ - `Alpha7`
+ - `Alpha8`
+ - `Alpha9`
+ - `Colon`
+ - `Semicolon`
+ - `Less`
+ - `Equals`
+ - `Greater`
+ - `Question`
+ - `At`
+ - `LeftBracket`
+ - `Backslash`
+ - `RightBracket`
+ - `Caret`
+ - `Underscore`
+ - `BackQuote`
+ - `A`
+ - `B`
+ - `C`
+ - `D`
+ - `E`
+ - `F`
+ - `G`
+ - `H`
+ - `I`
+ - `J`
+ - `K`
+ - `L`
+ - `M`
+ - `N`
+ - `O`
+ - `P`
+ - `Q`
+ - `R`
+ - `S`
+ - `T`
+ - `U`
+ - `V`
+ - `W`
+ - `X`
+ - `Y`
+ - `Z`
+ - `LeftCurlyBracket`
+ - `Pipe`
+ - `RightCurlyBracket`
+ - `Tilde`
+ - `Delete`
+ - `Keypad0`
+ - `Keypad1`
+ - `Keypad2`
+ - `Keypad3`
+ - `Keypad4`
+ - `Keypad5`
+ - `Keypad6`
+ - `Keypad7`
+ - `Keypad8`
+ - `Keypad9`
+ - `KeypadPeriod`
+ - `KeypadDivide`
+ - `KeypadMultiply`
+ - `KeypadMinus`
+ - `KeypadPlus`
+ - `KeypadEnter`
+ - `KeypadEquals`
+ - `Insert`
+ - `Home`
+ - `End`
+ - `PageUp`
+ - `PageDown`
+ - `F1`
+ - `F2`
+ - `F3`
+ - `F4`
+ - `F5`
+ - `F6`
+ - `F7`
+ - `F8`
+ - `F9`
+ - `F10`
+ - `F11`
+ - `F12`
+ - `F13`
+ - `F14`
+ - `F15`
+ - `Numlock`
+ - `CapsLock`
+ - `ScrollLock`
+ - `RightShift`
+ - `LeftShift`
+ - `RightControl`
+ - `LeftControl`
+ - `RightAlt`
+ - `LeftAlt`
+ - `RightCommand`
+ - `LeftCommand`
+ - `AltGr`
+ - `Help`
+ - `Print`
+ - `SysReq`
+ - `Break`
+ - `Menu`
