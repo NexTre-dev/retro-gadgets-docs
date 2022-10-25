@@ -35,5 +35,5 @@ Properties for use with the [GamepadChip](../misc/GamepadChip.md) or [KeyboardCh
 ## Hardware
 These properties can be set with the multitool inspector, but cannot be set in software.
 
-### Symbol - `Symbol` *(hardware)*
-A symbol to display on the button. Symbols can be painted with the paint tool to be a different color than the background.
+### Symbol - `Symbol` *(hardware)* ⚠️ Not available in all variants.
+A symbol to display on the button. Symbols can be painted with the paint tool to be a different color than the background. **Smaller LedButtons do not have this property.**
