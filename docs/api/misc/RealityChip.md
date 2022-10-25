@@ -4,7 +4,7 @@
 
 The Reality Chip provides values from the real state of the device, and may do more in the future.
 
-It is curiously labeled "RB", presumably because it use to be / is internally called the "Reality Bridge"
+It is curiously labeled "RB", presumably because it is internally called the "Reality Bridge".
 
 ## Properties
 All current properties refresh every second.
@@ -27,7 +27,7 @@ local reality:RealityChip = gdt.RealityChip0
 
 function update()
 	local percent = reality.Ram.Used/(reality.Ram.Available + reality.Ram.Used)
-	log(tostring(percent*100)) --Example: 70.83448438808485
+	log(tostring(percent*100)) -- 70.83448438808485 (This will vary)
 end
 ```
 
