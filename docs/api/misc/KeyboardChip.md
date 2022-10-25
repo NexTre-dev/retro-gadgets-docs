@@ -4,8 +4,6 @@
 
 The KeyboardChip is used to get input from a connected keyboard. When connected to something that is interactable, it can allow the component to be controlled via the keyboard.
 
-In the case of this control stick, it maps the WASD keys to its movement, allowing the user to manipulate it without using the cursor. If you're curious as to what the formatting means (_"why the colons?"_), see **Multitool configuration**.
-
 **_⚠️ This component is still in the process of being elaborated on._**
 
 ## Methods
