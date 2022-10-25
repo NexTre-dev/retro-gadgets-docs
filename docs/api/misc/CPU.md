@@ -37,8 +37,6 @@ end
 
 ### Creating consistent interpolation
 
-📝 This section is written in a casual tone, and should be re-worded.
-
 <!-- not sure if retro gadgets handles deltatime already? remove this section if that's the case -->
 
 Making sure the movement of something stays consistent is incredibly important when doing anything relating to such. If you are moving a square at 60 FPS, you want to move it the same distance in 5 FPS as well. However, in most general cases, this does not happen. If you transition from a value of 0 to 100, incrementing by 1 each frame:
@@ -50,7 +48,9 @@ function update()
   myNumber = myNumber + 1
 end
 ```
-This would work well in most cases, if the framerate was consistent. However, there's a _glaring flaw_. If the program is running at 60FPS, `myNum` would be at 100 within around 1.7 seconds. If it was running at 30FPS, it would be at 100 within 3 seconds. If it was at 5FPS, it would be at 100 within 20 seconds!! How can we somehow sync up the incrementation so that it is consistent no matter what your frames-per-second is? The answer is incredibly simple, and is applied everywhere when dealing with movement: multiply the incrementation value by the DeltaTime.
+
+This would work well in most cases, as long as the framerate is consistent. However, in the case that it isn't, the time it would take for `myNumber` to reach 100 would vary between different framerates. This can present issues in scenarios where you need the incrementation of a variable to be consistent (such as the movement of a character), so it's important to find a way to sync it to the FPS. This practice is applied in most circumstances when it comes to data interpolation that must be consistent, and only involves a few extra characters:
+
 ```lua
 local myNumber:number = 0
 local cpu:CPU = gdt.CPU0 -- Replace this with your CPU
@@ -59,4 +59,5 @@ function update()
 	myNumber = myNumber + (1 * cpu.DeltaTime)
 end
 ```
-Now, no matter what our framerate is, it will still take the same amount of time to reach 100 on 5FPS as it would on 60FPS. If framerate is a concern and you want to interpolate between two values smoothly, from things like movement to animations, it would be a good idea to use DeltaTime to control it.
+
+Because we multiplied the incrementation value by the DeltaTime, no matter the framerate, in the long run, it will still take the same amount of time for `myNumber` to reach 100.
