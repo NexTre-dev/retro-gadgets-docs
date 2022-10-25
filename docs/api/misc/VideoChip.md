@@ -7,7 +7,9 @@ The Video Chip represents the canvas of its connected screens, and is used to dr
 ## Properties
 
 ### Mode - `VideoChipMode`
-*"The SingleBuffer/DoubleBuffer mode for this VideoChip."*, whatever that means.
+The buffer mode, which can either be `SingleBuffer` or `DoubleBuffer`. 
+
+A single buffer allows you to work on a single screen buffer that is always changing as new commands are sent. If you were to draw a circle, for example, it would be sent straight to the buffer and get displayed immediately. However, with DoubleBuffer, you are dealing with two different video buffers that alternate regularly. Every frame, the buffer that you are editing alternates; you could be editing buffer A, while buffer B is being projected to the screens the chip is connected to. The next frame, the changes in buffer A would be presented to the screen(s) while any other changes for that frame would be made to buffer B. Generally, this won't make a difference in the way the video is displayed, but if you are experiencing flickering, lag, or stuttering while using SingleBuffer, you should switch to DoubleBuffer.
 
 ### Height - `number` **[Read only]**
 Height in pixels of the rendering buffer. The area takes in account all the displays connected to this VideoChip.
@@ -88,7 +90,7 @@ end
 <img src="../../../.github/assets/docs/SpriteFont.png" width="200" align="right">
 
 ### DrawText(position `vec2`, fontSprite `SpriteSheet`, text `string`, textColor `color`, backgroundColor `color`)
-Writes **text** to the canvas, using the only valid font: `local spriteFont = GetSpriteSheet("Builtin/StandardFont")`
+Writes **text** to the canvas, using **fontSprite** as the font to be displayed. **fontSprite** is a special kind of SpriteSheet representing a textual font that cannot be created normally. As such, the only one that can be used is loaded via `local spriteFont = GetSpriteSheet("Builtin/StandardFont")`.
 ```lua
 -- Assets
 local spriteFont = GetSpriteSheet("Builtin/StandardFont")
@@ -105,7 +107,7 @@ end
 
 
 ### RasterSprite(position1 `vec2`, position2 `vec2`, position3 `vec2`, position4 `vec2`, spriteSheet `SpriteSheet`, spriteX `number`, spriteY `number`, tintColor `color`, backgroundColor `color` )
-Draws **an entire sprite sheet** mapping it on a quad identified by position1, position2, position3, position4.
+Draws **an entire sprite sheet** mapping it on a quad identified by position1, position2, position3, and position4.
 
 ### DrawRenderBuffer(position `vec2`, renderBuffer `RenderBuffer`, width `number`, height `number`)
 Draws a render buffer (supposedly coming from **Webcam** component) at the desired position, width and height.

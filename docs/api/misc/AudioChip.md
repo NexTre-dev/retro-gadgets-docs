@@ -9,7 +9,8 @@ The AudioChip is used to play audio. AudioChips do not currently need to be conn
 ## Properties
 
 ### ChannelsCount - `number` **[Read only]**
-Number of available channels for this AudioChip. Each channel can independently play an audio sample.
+
+Number of available channels for this AudioChip. Each channel can independently play an audio sample. If you play a sound on a channel that is already being utilized, it with cut out and be replaced with the new sound.
 
 The number of channels available depends on the size of the chip. These values may change in the full release.
 
@@ -22,7 +23,7 @@ The number of channels available depends on the size of the chip. These values m
 ```lua
 local audio:AudioChip = gdt.AudioChip0
 
-log(tostring(audio.ChannelsCount)) --Returns the appropriate number from the table above
+log(tostring(audio.ChannelsCount)) -- Returns the appropriate number from the table above
 ```
 
 ### Volume - `number`

@@ -7,10 +7,13 @@ The CPU is responsible for most gadget interactivity and runs Lua asset files. C
 ## Properties
 
 ### Source - `Code` **[Read only]**
-Source defines what "file" the CPU will run, and is typically set with the multitool inspector. You can set it to any Lua asset.
+
+Source defines what "file" the CPU will run, and is typically set with the multitool inspector. You can set it to any Lua asset. Upon creating a CPU, a code file is created automatically titled CPU0.lua, and it is automatically connected to said CPU.
 
 ### Time - `number` **[Read only]**
+
 The time since the gadget is turned on, expressed in seconds.
+
 ```lua
 local cpu:CPU = gdt.CPU0
 function update()
@@ -19,7 +22,9 @@ end
 ```
 
 ### DeltaTime - `number` **[Read only]**
-The time elapsed since the last tick, expressed in seconds. Essentially, this is the difference (or *delta*) between the last `update()` call. This is useful to update animations and timers without relying on remembering `Time`.
+
+The time elapsed since the last tick, expressed in seconds. Essentially, this is the difference (or _delta_) between the last `update()` call. This is useful to update animations and timers without relying on remembering `Time`, as well as interpolate values smoothly (see "Creating consistent interpolation").
+
 ```lua
 local cpu:CPU = gdt.CPU0
 function update()
@@ -28,3 +33,31 @@ function update()
 end
 ```
 
+## Remarks
+
+### Creating consistent interpolation
+
+<!-- not sure if retro gadgets handles deltatime already? remove this section if that's the case -->
+
+Making sure the movement of something stays consistent is incredibly important when doing anything relating to such. If you are moving a square at 60 FPS, you want to move it the same distance in 5 FPS as well. However, in most general cases, this does not happen. If you transition from a value of 0 to 100, incrementing by 1 each frame:
+```lua
+local myNumber:number = 0
+
+-- update() is called each frame
+function update()
+  myNumber = myNumber + 1
+end
+```
+
+This would work well in most cases, as long as the framerate is consistent. However, in the case that it isn't, the time it would take for `myNumber` to reach 100 would vary between different framerates. This can present issues in scenarios where you need the incrementation of a variable to be consistent (such as the movement of a character), so it's important to find a way to sync it to the FPS. This practice is applied in most circumstances when it comes to data interpolation that must be consistent, and only involves a few extra characters:
+
+```lua
+local myNumber:number = 0
+local cpu:CPU = gdt.CPU0 -- Replace this with your CPU
+
+function update()
+	myNumber = myNumber + (1 * cpu.DeltaTime)
+end
+```
+
+Because we multiplied the incrementation value by the DeltaTime, no matter the framerate, in the long run, it will still take the same amount of time for `myNumber` to reach 100.
