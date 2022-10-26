@@ -156,6 +156,6 @@ Input names can be accessed by `KeyboardChip.`nameOfInput, and are listed below.
 
 Sometimes, components can be given direct control from the keyboard chip without having to specify the intricacies in code.
 
-<img src="../../../.github/assets/docs/KeyboardInput.png">
+<img src="../../../assets/docs/KeyboardInput.png">
 
 By using the Multitool, you can provide components such as Sticks with an InputSourceX and an InputSourceY that will control how a keyboard button manipulates the axes it moves upon. When selecting a _NEGATIVE_ and _POSITIVE_ input, NEGATIVE should be the one that moves the stick down or left; in a negative direction, basically. POSITIVE is the opposite. By mapping S to NEGATIVE and W to POSITIVE, we can move the stick up and down with the W (up) and S (down) keys. This method is an abstraction of the manual technique used in code via the KeyboardChip's own methods, and is usually much easier and faster. However, it may not provide the extensibility you need, may be too limited, or may not apply to an object. In that case, manually doing it in a Lua file is the better option.

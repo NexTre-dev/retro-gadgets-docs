@@ -4,61 +4,24 @@ The Retro Desk has **2 modes**: MultiTool Mode and Building Mode.
 
 ## Building Mode
 <p align="center">
-	<img src="../.github/screenshots/building-mode.png" width="1000px">
+	<img src="../assets/screenshots/building-mode.png" width="1000px">
 </p>
 
-<div align="center">
-<table>
-	<tr>
-		<td>
-			<b>1. Your ✨ Amazing ✨ Gadget</b><br>
-			Your gadget is the main attraction of your desk. It's what you have to be building, testing and playing around with in this game.
-   		</td>
-		<td>
-			<b>2. Gadget Mat</b><br>
-			This is your building area, feel free to
-			fiddle around with your gadget here!
-   		</td>
-		<td>
-			<b>3. The Boards' Drawer</b><br>
-			Here you can find all the boards (basic shapes) that you can use to build your gadget.
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<b>4. Component Drawers</b><br>
-			Here you can find 3 drawers, each containing different types of components.
-			<!-- TODO: add links to the components -->
-		</td>
-		<td>
-			<b>5. The Soldering Iron</b><br>
-			You can use the soldering iron to solder
-			your gadget's boards together.
-		</td>
-		<td>
-			<b>6. The Airbrush</b><br>
-			Feeling a bit creative, perhaps fancy? (🍷) You can use the airbrush to paint your gadget however you want.
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<b>7. The Tweezers</b><br>
-			You can use the tweezers to place or reposition stickers on your gadget.
-		</td>
-		<td>
-			<b>8. MultiTool Handle</b><br>
-			Your primary tool, which is used to
-			program functionality into your device.  
-			We'll get into this later!
-		</td>
-		<td>
-			<b>9. Gadget Archive</b><br>
-			You can put your finished gadgets here.
-			Didn't finish it? No problem! Work on something else and return to it later.
-		</td>
-	</tr>
-</table>
-</div>
+## Interactable Objects
+
+| Object Name          | Description                                                                                                                       |
+| :------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+| 1. Your Gadget       | Your gadget is the main attraction of your desk. It's what you have to be building, testing and playing around with in this game. |
+| 2. Mat               | This is your building area, feel free to fiddle around with your gadget here!                                                     |
+| 3. Boards Drawer     | Here you can find all the boards (basic shapes) that you can use to build your gadget.                                            |
+| 4. Component Drawers | Here you can find 3 drawers, each containing different types of components.                                                       |
+| 5. Soldering Iron    | You can use the soldering iron to solder your gadget's boards together.                                                           |
+| 6. Airbrush          | Feeling a bit creative, perhaps fancy? (🍷) You can use the airbrush to paint your gadget however you want.                        |
+| 7. Tweezers          | You can use the tweezers to place or reposition stickers on your gadget.                                                          |
+| 8. MultiTool Handle  | Your primary tool, which is used to program functionality into your device. We'll get into this later!                            |
+| 9. Gadget Archive    | You can put your finished gadgets here. Didn't finish it? No problem! Work on something else and return to it later.              |
+| 10. Lamp             | This is your lamp, you can drag it to the middle, to the left, and turn it on and off.                                            |
+| 11. Sticker Trash    | Drag your sticker here and it'll be deleted.                                                                                      |
 
 <!-- 
 TODO:
@@ -76,10 +39,10 @@ Creating a gadget may seem like a daunting task at first, so let's build somethi
 Let's start by taking a large square board from the boards drawer and placing it on the gadget mat.
 
 After you're done, pull the cover off of your gadget by holding on this handle and pulling it up:  
-<img src="../.github/screenshots/board-cover.png" width="135">
+<img src="../assets/screenshots/board-cover.png" width="135">
 
 Now, let's flip the board over by clicking on the arrow icon near the gadget handle. Open the drawer labelled "Misc", and find a small CPU chip, then place it on the back-side of the board. Flip it back over.  
-<img src="../.github/screenshots/board-cpuchip.png" height="180">
+<img src="../assets/screenshots/board-cpuchip.png" height="180">
 
 Now, let's add a light. Open the drawer labelled "Output", find a LED light, and place it anywhere on the board.
 
@@ -90,7 +53,7 @@ Now that you've built your gadget, it's time to program it!
 Let's start by opening MultiTool: drag the handle to the right.
 
 You will most likely see your gadget in the following way:  
-<img src="../.github/screenshots/gadget-multitool.png" width="300">
+<img src="../assets/screenshots/gadget-multitool.png" width="300">
 
 Let's open the CPU's Lua script by clicking on "Assets", then double-clicking on "CPU0.lua".
 
