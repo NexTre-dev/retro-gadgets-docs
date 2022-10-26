@@ -17,7 +17,7 @@ The Retro Desk has **2 modes**: MultiTool Mode and Building Mode.
 | 4. Component Drawers | Here you can find 3 drawers, each containing different types of components.                                                       |
 | 5. Soldering Iron    | You can use the soldering iron to solder your gadget's boards together.                                                           |
 | 6. Airbrush          | Feeling a bit creative, perhaps fancy? (🍷) You can use the airbrush to paint your gadget however you want.                        |
-| 7. Twwezers          | You can use the tweezers to place or reposition stickers on your gadget.                                                          |
+| 7. Tweezers          | You can use the tweezers to place or reposition stickers on your gadget.                                                          |
 | 8. MultiTool Handle  | Your primary tool, which is used to program functionality into your device. We'll get into this later!                            |
 | 9. Gadget Archive    | You can put your finished gadgets here. Didn't finish it? No problem! Work on something else and return to it later.              |
 | 10. Lamp             | This is your lamp, you can drag it to the middle, to the left, and turn it on and off.                                            |
