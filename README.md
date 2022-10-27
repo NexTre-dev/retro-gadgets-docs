@@ -12,8 +12,7 @@ This repository contains the documentation for doing anything code-related in Re
 
 ## Okay... how do I get started?
 Well, <a href="https://store.steampowered.com/app/1730260/Retro_Gadgets/" target="_blank">download the game</a> if you haven't done that already.  
-* [Getting to know your Retro Desk](./docs/game/Retro-Desk.md)
-* [Scripting your Gadgets](./docs/lua/Scripting-gadgets.md)
+* [Getting Started](./examples/getting-started.md)
 
 ## Todo
 - [ ] Finish README.md
