@@ -13,7 +13,7 @@ The needle has momentum and will ease and bounce to new values.
 ### Value - `number`
 A position from 0 to 100, with 0 being the very left side of the range (labeled - ) and 100 being the right side (labeled + )
 
-![The extremes of the Gauge](../../../assets/docs/Gauge.png)
+![The extremes of the Gauge](../../../assets/docs/Gauge/Gauge.png)
 
 
 ## Examples
