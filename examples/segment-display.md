@@ -106,7 +106,7 @@ Now let's define a table called `segments` that we'll use as reference to displa
 
 ```lua
 -- variables
-local segments = {
+local segments:{{number}} = {
     -- each value in this table represents the LED to turn on for that specific index
     -- in this segments table we don't need the period so we only put upto a maximum of 7
     [0] = {1,2,3,4,5,6},
@@ -155,12 +155,12 @@ function convertNumber(display:SegmentDisplay, value:number)
 end
 ```
 
-Alright, now let's create a function called `listenInputs`, this will check the states of our buttons and act accordingly.
-We'll also clamp `num` and check if it is less than zero because we can't display negative values.
+Alright, now let's create a function called `handleInputs`, this will handle the button inputs.
+We'll also redefine `num` to itself mod by 100 and check if it is less than zero because we can't display negative values.
 
 ```lua
-function listenInputs()
-    num = math.max(num, 0) % 100
+function handleInputs()
+    num %= 100
 
     if upBtn.ButtonDown then
         num += 1
@@ -179,13 +179,13 @@ end
 
 Now we'll also check if we're holding down the buttons so we don't have to continuously press each of them.
 
-First, go to the variables section where you defined `segments` and `num`, and create two new variables called `upHoldT` and `downHoldT`, these will keep track of how long we've been holding a button.
+First, go to the variables section where you defined `segments` and `num`, and create a new variable called `holdTime`, this will keep track of how long we've been holding a button.
 
-You also have to define `holdTime`, this will determine how long we have to hold before `num` starts changing, you can edit this however you like.
+You also have to define `holdDelay`, this will determine how long we have to hold before `num` starts changing, you can edit this however you like.
 
 ```lua
 -- variables
-local segments = {
+local segments:{{number}} = {
     -- each value in this table represents the LED to turn on for that specific index
     -- in this segments table we don't need the period so we only put upto a maximum of 7
     [0] = {1,2,3,4,5,6},
@@ -202,16 +202,15 @@ local segments = {
 
 local num:number = 0
 
-local upHoldT:number = 0
-local downHoldT:number = 0
-local holdTime:number = 3
+local holdTime:number = 0
+local holdDelay:number = 3
 ```
 
-Then go back to `listenInputs` and do as following:
+Then go back to `handleInputs` and add some if statements that checks each button's state and act accordingly
 
 ```lua
-function listenInputs()
-    num = math.max(num, 0) % 100
+function handleInputs()
+    num %= 100
 
     if upBtn.ButtonDown then
         num += 1
@@ -221,24 +220,18 @@ function listenInputs()
         num -= 1
     end
 
-    if upBtn.ButtonState then
-        upHoldT += 0.1
+    if upBtn.ButtonState or downBtn.ButtonState then
+        holdTime += 0.1
     else
-        upHoldT = 0
+        holdTime = 0
     end
 
-    if downBtn.ButtonState then
-        downHoldT += 0.1
-    else
-        downHoldT = 0
-    end
-
-    if upHoldT >= holdTime then
-        num += 1
-    end
-
-    if downHoldT >= holdTime then
-        num -= 1
+    if holdTime >= holdDelay then
+        if upBtn.ButtonState then
+            num += 1
+        else
+            num -= 1
+        end
     end
 
     if num < 0 then
@@ -248,12 +241,12 @@ function listenInputs()
 end
 ```
 
-Finally, call `listenInputs` in the `update` function so that it gets called every time tick.
+Finally, call `handleInputs` in the `update` function so that it gets called every time tick.
 
 ```lua
 -- update function is called every time tick
 function update()
-    listenInputs()
+    handleInputs()
 end
 ```
 
