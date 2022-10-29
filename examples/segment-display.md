@@ -1,4 +1,4 @@
-# Segment Display
+# Segment Display <!-- omit in toc -->
 
 <img src="https://docs.retrogadgets.game/api/modules/SegmentDisplay.png" width="200" align="right">
 
@@ -6,6 +6,12 @@ Welcome, in this page, you will be learning how to display numbers 0-99 in a two
 and how we can manipulate those numbers using two [buttons](../docs/modules/input/LedButton.md).
 
 Before we start, I want you to familiarize your self with the environment first [here](./getting-started.md).
+
+## Table of Contents <!-- omit in toc -->
+- [Building your gadget](#building-your-gadget)
+- [Printing symbols on your components](#printing-symbols-on-your-components)
+- [Painting your gadget](#painting-your-gadget)
+- [Programming your gadget](#programming-your-gadget)
 
 ## Building your gadget
 First of all, go to the boards drawer and pick a shape:
