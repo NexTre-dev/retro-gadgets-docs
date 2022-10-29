@@ -11,5 +11,9 @@ Each segment can be accessed in the table starting from the top of the display t
 
 <img src="../../../assets/docs/ReferenceSegmentDisplay.png">
 
+So if you wanted to display 2 for example, you would need to turn on 1, 2, 4, 5, and 7.
+
+<img src="../../../assets/docs/ExampleSegmentDisplay.png" width="300">
+
 ### Colors - `{{color}}`
 A table that maps the color of all the Leds in the display.
