@@ -24,7 +24,7 @@ If you are following exactly what I'm doing then make sure to reposition the [po
 <img src="../assets/examples/segment-display/gadget-opened.png" width="200">
 <img src="../assets/examples/segment-display/gadget-buttons.png" width="200">
 
-Now flip the board and go to the misc drawer, scroll up and you should find a "CPUs" section.  
+Now flip the board and go to the misc drawer, scroll up and you should find the "CPUs" section.  
 Pick a CPU and place that on your gadget, this will allow us to [program](#programming-your-gadget) our gadget later.
 
 <img src="../assets/examples/segment-display/gadget-cpu.png" width="400">
@@ -36,6 +36,8 @@ Great, now we can decorate our gadget.
 Note that only certain components can have symbols printed onto them such as [LED buttons](../docs/modules/input/LedButton.md) and [switches](../docs/modules/input/Switch.md).
 
 I'm just going to print a symbol on both buttons by opening the MultiTool and selecting the two buttons we just placed.
+
+You can also edit the description and name of your gadget.
 
 <img src="../assets/examples/segment-display/multitool.png" width="700">
 
@@ -68,7 +70,7 @@ Left-clicking on a button will change its color while right-clicking will change
 
 As you can see in the image, my main color is dark gray while my secondary color is white.
 
-I'll paint the seven-segment display dark gray and then paint the whole gadget black.
+I'll paint the segment display dark gray and then paint the whole gadget black.
 
 <img src="../assets/examples/segment-display/gadget-painted.png" width="400">
 
@@ -80,10 +82,173 @@ First of all, go to your MultiTool and click on the "Assets" button.
 
 <img src="../assets/examples/segment-display/multitool-button-assets.png" width="400">
 
-Now double-click on the `CPU0.lua` file.
-
-You should see this:
+Now double-click on the `CPU0.lua` file and you should see this:
 
 <img src="../assets/examples/segment-display/multitool-code-editor.png" width="400">
 
-🚧 Under Construction! 🚧
+Let's define a few component variables first.  
+This will help us identify which component we are working with.
+
+```lua
+-- components
+local segmentDisplay:SegmentDisplay = gdt.SegmentDisplay0
+local upBtn:LedButton = gdt.LedButton0
+local downBtn:LedButton = gdt.LedButton1
+```
+
+Now let's define a table called `segments` that we'll use as reference to display our `num` variable to the [segment display](../docs/modules/output/SegmentDisplay.md).
+
+```lua
+-- variables
+local segments = {
+    -- each value in this table represents the LED to turn on for that specific index
+    -- in this segments table we don't need the period so we only put upto a maximum of 7
+    [0] = {1,2,3,4,5,6},
+    [1] = {2,3},
+    [2] = {1,2,4,5,7},
+    [3] = {1,2,3,4,7},
+    [4] = {2,3,6,7},
+    [5] = {1,3,4,6,7},
+    [6] = {1,3,4,5,6,7},
+    [7] = {1,2,3},
+    [8] = {1,2,3,4,5,6,7},
+    [9] = {1,2,3,4,6,7}
+}
+
+local num:number = 0
+```
+
+Awesome! Now let's write a few functions that'll help us display the numbers on the segment display.  
+
+```lua
+-- functions
+
+-- display is the component we want to access
+-- digit is the digit we want to access the segments of
+-- value is the number we want to display
+function displayDigit(display:SegmentDisplay, digit:number, value:number)
+    -- let's make sure to turn off every LED first
+    for segment=1, 8 do
+        display.States[digit][segment] = false
+    end
+    
+    -- now let's go through each table in the segments table
+    -- and turn the required LEDs on
+    for segment=1, #segments[value] do
+        display.States[digit][segments[value][segment]] = true
+    end
+end
+
+-- display is the component we want to access
+-- value is the number we want to display
+function convertNumber(display:SegmentDisplay, value:number)
+    local digit1:number = math.floor(value / 10) % 10
+    local digit2:number = value % 10
+    displayDigit(display, 1, digit1)
+    displayDigit(display, 2, digit2)
+end
+```
+
+Alright, now let's create a function called `listenInputs`, this will check the states of our buttons and act accordingly.
+We'll also clamp `num` and check if it is less than zero because we can't display negative values.
+
+```lua
+function listenInputs()
+    num = math.max(num, 0) % 100
+
+    if upBtn.ButtonDown then
+        num += 1
+    end
+
+    if downBtn.ButtonDown then
+        num -= 1
+    end
+
+    if num < 0 then
+        num = 99
+    end
+    convertNumber(segmentDisplay, num)
+end
+```
+
+Now we'll also check if we're holding down the buttons so we don't have to continuously press each of them.
+
+First, go to the variables section where you defined `segments` and `num`, and create two new variables called `upHoldT` and `downHoldT`, these will keep track of how long we've been holding a button.
+
+You also have to define `holdTime`, this will determine how long we have to hold before `num` starts changing, you can edit this however you like.
+
+```lua
+-- variables
+local segments = {
+    -- each value in this table represents the LED to turn on for that specific index
+    -- in this segments table we don't need the period so we only put upto a maximum of 7
+    [0] = {1,2,3,4,5,6},
+    [1] = {2,3},
+    [2] = {1,2,4,5,7},
+    [3] = {1,2,3,4,7},
+    [4] = {2,3,6,7},
+    [5] = {1,3,4,6,7},
+    [6] = {1,3,4,5,6,7},
+    [7] = {1,2,3},
+    [8] = {1,2,3,4,5,6,7},
+    [9] = {1,2,3,4,6,7}
+}
+
+local num:number = 0
+
+local upHoldT:number = 0
+local downHoldT:number = 0
+local holdTime:number = 3
+```
+
+Then go back to `listenInputs` and do as following:
+
+```lua
+function listenInputs()
+    num = math.max(num, 0) % 100
+
+    if upBtn.ButtonDown then
+        num += 1
+    end
+
+    if downBtn.ButtonDown then
+        num -= 1
+    end
+
+    if upBtn.ButtonState then
+        upHoldT += 0.1
+    else
+        upHoldT = 0
+    end
+
+    if downBtn.ButtonState then
+        downHoldT += 0.1
+    else
+        downHoldT = 0
+    end
+
+    if upHoldT >= holdTime then
+        num += 1
+    end
+
+    if downHoldT >= holdTime then
+        num -= 1
+    end
+
+    if num < 0 then
+        num = 99
+    end
+    convertNumber(segmentDisplay, num)
+end
+```
+
+Finally, call `listenInputs` in the `update` function so that it gets called every time tick.
+
+```lua
+-- update function is called every time tick
+function update()
+    listenInputs()
+end
+```
+
+Congratulations! 🏆🥳 We now have a working counter gadget, and you've learned how to use the segment display!
