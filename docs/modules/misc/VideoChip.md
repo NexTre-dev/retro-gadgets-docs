@@ -33,8 +33,7 @@ end
 ## SetPixel(position `vec2`, color `color`)
 Sets the pixel at the specified position to the specified **color**.
 
-
-<img src="../../../assets/docs/PixelGrid.png" width="200" align="right">
+<img src="../../../assets/docs/VideoChip/PixelGrid.png" width="200" align="right">
 
 ### DrawPointGrid(gridOffset `vec2`, dotsDistance `number`, color `color`)
 Draws a dotted grid on the **entire display area**, with an offset. The dotsDistance parameter express the distance in pixels, on both axis, between dots. This is a strange function, but can be uses for backgrounds.
@@ -68,7 +67,7 @@ Draws an empty triangle with vertices in position1, position2 and position3, in 
 ### FillTriangle(position1 `vec2`, position2 `vec2`, position3 `vec2`, color `color`)
 Draws a filled triangle with vertices in position1, position2 and position3, in the specified color.
 
-<img src="../../../assets/docs/ExampleImageDrawing.png" width="200" align="right">
+<img src="../../../assets/docs/VideoChip/ExampleImageDrawing.png" width="200" align="right">
 
 ### DrawSprite(position `vec2`, spriteSheet `SpriteSheet`, spriteX `number`, spriteY `number`, tintColor `color`, backgroundColor `color`)
 Draws a specific sprite frame from the spriteSheet. **Position** is for the position on the screen. **SpriteSheet** is a `SpriteSheet` loaded from assets. **SpriteX** and **Y** determine the offset for which sprite to draw, based on the zoom grid in the editor **(not pixels)**. **TintColor** allows you to multiply the sprite color (set to `color.white` to draw the sprite as-is). **BackgroundColor** can be set to transparent (`color.clear`) to keep transparency.
@@ -85,9 +84,9 @@ function update()
 	video:DrawSprite(vec2(5,5), spriteSheet, 0, 0, color.white, color.clear)
 end
 ```
-<img src="../../../assets/docs/ExampleImageAsset.png" style="max-width: 400px">
+<img src="../../../assets/docs/VideoChip/ExampleImageAsset.png" style="max-width: 400px">
 
-<img src="../../../assets/docs/SpriteFont.png" width="200" align="right">
+<img src="../../../assets/docs/VideoChip/SpriteFont.png" width="200" align="right">
 
 ### DrawText(position `vec2`, fontSprite `SpriteSheet`, text `string`, textColor `color`, backgroundColor `color`)
 Writes **text** to the canvas, using **fontSprite** as the font to be displayed. **fontSprite** is a special kind of SpriteSheet representing a textual font that cannot be created normally. As such, the only one that can be used is loaded via `local spriteFont = GetSpriteSheet("Builtin/StandardFont")`.

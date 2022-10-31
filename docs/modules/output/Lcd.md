@@ -17,7 +17,7 @@ local display:LcdDisplay = gdt.Lcd0
 display.Text = "Hello! How are  you today?"
 --Extra space between are and you to avoid splitting word
 ```
-![Text on an Lcd](../../../assets/docs/Lcd.png)
+![Text on an Lcd](../../../assets/docs/Lcd/Lcd.png)
 
 ### BgColor - `color`
 Background color for the Lcd.

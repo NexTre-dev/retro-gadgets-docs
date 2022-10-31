@@ -6,7 +6,7 @@ Retro Gadgets is a gadget creation station where you invent, build, solder, code
 This repository contains the documentation for doing anything code-related in Retro Gadgets.  
 <a href="https://docs.retrogadgets.game" target="_blank">You can find the official documentation here, although it might not be of much use (yet)</a>
 
-* <a href="https://store.steampowered.com/app/1730260/Retro_Gadgets/" target="_blank">Wishlist the game or download the demo here!</a>
+* <a href="https://store.steampowered.com/app/1730260/Retro_Gadgets/" target="_blank">Wishlist the game here!</a>
 * <a href="https://discord.com/invite/np6FUDjt9E" target="_blank">Join the Official Discord Server!</a>
 * [Learn how you can contribute by opening a pull request!](./docs/github/Contributing.md)</a>
 
