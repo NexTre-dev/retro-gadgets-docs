@@ -4,7 +4,7 @@
 
 The KeyboardChip is used to get input from a connected keyboard. When connected to something that is interactable, it can allow the component to be controlled via the keyboard.
 
-**_⚠️ This component is still in the process of being elaborated on._**
+**_❔ This component is still in the process of being elaborated on._**
 
 ## Methods
 

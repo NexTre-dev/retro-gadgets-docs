@@ -120,8 +120,8 @@ Draws a render buffer (supposedly coming from **Webcam** component) at the desir
 vec2 is a two dimensional vector, usually used to point to screen coordinates. Basically a single value that represents two numbers. You can make a new vec2 easily, and then access its properties with `x` and `y`.
 ```lua
 local pos:vec2 = vec2(20,10)
-log(tostring(pos.X)) --20
-log(tostring(pos.Y)) --10
+log(tostring(pos.X)) -- 20
+log(tostring(pos.Y)) -- 10
 ```
 `vec2(0,0)` is the top left corner of the canvas.
 
@@ -130,9 +130,9 @@ There is also vec3, but it is not usually used for screens. You may use it for o
 #### `color`
 `color` represents a color, and is used for LEDs or for drawing to the screen. You may construct a color in a few ways.
 ```lua
-Color(r, g, b) --Values 0-255
-ColorRGBA(r, g, b, a) --Alpha is also 0-255, 0 is transparent
-ColorHSV(h, s, v) --Hue is 0-360, the other values are 0-100
+Color(r, g, b) -- Values 0-255
+ColorRGBA(r, g, b, a) -- Alpha is also 0-255, 0 is transparent
+ColorHSV(h, s, v) -- Hue is 0-360, the other values are 0-100
 ```
 There are a few built in colors, such as `color.blue` or `color.black`. In the future, these will be listed in a dedicated page for `color`.
 

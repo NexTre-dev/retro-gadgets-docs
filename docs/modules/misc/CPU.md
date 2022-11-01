@@ -17,7 +17,7 @@ The time since the gadget is turned on, expressed in seconds.
 ```lua
 local cpu:CPU = gdt.CPU0
 function update()
-	log(tostring(cpu.Time)) --Example: 0.521000027656552
+	log(tostring(cpu.Time)) -- 0.521000027656552 (This will vary)
 end
 ```
 
@@ -28,8 +28,8 @@ The time elapsed since the last tick, expressed in seconds. Essentially, this is
 ```lua
 local cpu:CPU = gdt.CPU0
 function update()
-	log(tostring(cpu.DeltaTime)) --At 60/60 tps, this is roughly 0.01666 repeating.
-	--An example real value is: 0.01600000075995922
+	log(tostring(cpu.DeltaTime)) -- At 60/60 tps, this is roughly 0.01666 repeating.
+	-- An example real value is: 0.01600000075995922
 end
 ```
 
