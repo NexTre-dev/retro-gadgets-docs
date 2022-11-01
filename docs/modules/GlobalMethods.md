@@ -23,7 +23,7 @@ Provides a Lua file from the MuliTool asset list, which can be dynamically assig
 Composes and returns a color object out of RGB values. The three parameters should be in the range of 0 - 255.
 
 ### ColorRGBA(r `number`, g `number`, b `number`, a `number`) `color`
-Composes and returns a color object out of RGB values, along with an alpha channel. The RGB parameters should be in the range of 0 - 255 and the alpha parameter should be in the range of 0 - 1, where 0 is transparent and 1 is opaque.
+Composes and returns a color object out of RGB values, along with an alpha channel. The four parameters should be in the range of 0 - 255. For the alpha channel, 0 is completely transparent and 255 is opaque.
 
 ### ColorHSV(h `number`, s `number`, v `number`) `color`
 Composes and returns a color object out of HSV values. The ranges for the hue should be 0 - 360 and the range for the saturation and value should be  0 - 100.
