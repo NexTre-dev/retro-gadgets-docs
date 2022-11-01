@@ -9,7 +9,7 @@ Provides a SpriteSheet from the MultiTool asset list.
 ### GetPalette(name `string`) `Palette`
 **❌ This method is deprecated.**
 
-TODO: Describe what it does.
+**⚠️ The functionality of this method has not yet been tested.**
 
 ### GetAudioSample(name `string`) `AudioSample`
 Provides an AudioSample from the MuliTool asset list. Supports mp3 and wav.
