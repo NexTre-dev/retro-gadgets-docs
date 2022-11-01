@@ -47,19 +47,29 @@ Does the same thing as `write()`, except adds a new line to the end of the text.
 
 
 ### setFgColor(colorId `number`)
-Doesn't seem to do anything, but possibly sets the text color in the MultiTool console.
+**⚠️ The functionality of this method has not yet been tested.**
+
+Sets the text color in the MultiTool console.
 
 ### setBgColor(colorId `number`)
-Doesn't seem to do anything, but possibly sets the background color in the MultiTool console.
+**⚠️ The functionality of this method has not yet been tested.**
+
+Sets the background color in the MultiTool console.
 
 ### resetFgColor()
-Doesn't seem to do anything, but possibly resets the text color in the MultiTool console.
+**⚠️ The functionality of this method has not yet been tested.**
+
+Resets the text color in the MultiTool console.
 
 ### resetBgColor()
-Doesn't seem to do anything, but possibly resets the background color in the MultiTool console.
+**⚠️ The functionality of this method has not yet been tested.**
+
+Resets the background color in the MultiTool console.
 
 ### resetColors()
-Doesn't seem to do anything, but possibly resets the colors in the MultiTool console.
+**⚠️ The functionality of this method has not yet been tested.**
+
+Resets the colors in the MultiTool console.
 
 ### setCursorPos(column `number`, line `number`)
 Sets the cursor position in the MultiTool console, where new text is added.
@@ -90,6 +100,7 @@ Restores the cursor position saved by `saveCursorPos()` and sets it to the resul
 Clears the MultiTool console.
 
 ### clearToEndLine()
+**⚠️ The functionality of this method has not yet been tested.**
 
 ## Lamp
 
