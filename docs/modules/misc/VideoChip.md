@@ -30,7 +30,7 @@ function update()
 end
 ```
 
-## SetPixel(position `vec2`, color `color`)
+### SetPixel(position `vec2`, color `color`)
 Sets the pixel at the specified position to the specified **color**.
 
 <img src="../../../assets/docs/VideoChip/PixelGrid.png" width="200" align="right">
