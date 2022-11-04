@@ -83,8 +83,14 @@ Sets the cursor's X position in the MultiTool console. The console can display a
 Sets the cursor's Y position in the MultiTool console. The console can display a maximum of 8 lines before overflowing.
 
 ### moveCursorX(deltaColumn `number`)
+**⚠️ The functionality of this method has not yet been tested.**
+
+Changes the MultiTool's cursor's X position by `deltaColumn`.
 
 ### moveCursorY(deltaLine `number`)
+**⚠️ The functionality of this method has not yet been tested.**
+
+Changes the MultiTool's cursor's Y position by `deltaLine`.
 
 ### saveCursorPos()
 **⚠️ The functionality of this method has not yet been tested.**
