@@ -4,7 +4,7 @@
 
 The GamepadChip is used to get input from a connected gamepad or controller.
 
-***⚠️ I don't know how this thing works and it has no official documentation.***
+***❔ I don't know how this thing works and it has no official documentation.***
 
 ## Properties
 

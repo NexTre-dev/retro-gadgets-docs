@@ -8,5 +8,5 @@ Decoration components show up in the gadget, but do not have any methods or prop
 
 ```lua
 local decor:Decoration = gdt.Decoration0
---decor.? ¯\_(ツ)_/¯
+-- decor.? ¯\_(ツ)_/¯
 ```

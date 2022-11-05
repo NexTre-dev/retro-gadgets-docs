@@ -4,7 +4,7 @@
 
 The AudioChip is used to play audio. AudioChips do not currently need to be connected to speakers.
 
-⚠️ This page is incomplete and unverified.
+**⚠️ This page is incomplete and unverified.**
 
 ## Properties
 
