@@ -1,23 +1,23 @@
 <img src="./assets/retrologo.png" width="200" align="right">
 
-# Retro Gadgets Documentation
-Retro Gadgets is a gadget creation station where you invent, build, solder, code and customise your own electrifying gadgets then share them with the world.
+# Retro Gadgets Документація
+Retro Gadgets - це платформа для створення гаджетів, де можна винаходити, збирати, паяти, кодувати та налаштовувати власні електричні гаджети, а потім ділитися ними зі світом.
 
-This repository contains the documentation for doing anything code-related in Retro Gadgets.  
-<a href="https://docs.retrogadgets.game" target="_blank">You can find the official documentation here, although it might not be of much use (yet)</a>
+Цей репозиторій містить документацію для виконання будь-яких дій, пов'язаних з кодом у Retro Gadgets.  
+<a href="https://docs.retrogadgets.game" target="_blank">Ви можете знайти офіційну документацію тут, хоча вона може бути не дуже корисною (поки що)</a>
 
-* <a href="https://store.steampowered.com/app/1730260/Retro_Gadgets/" target="_blank">Wishlist the game here!</a>
-* <a href="https://discord.com/invite/np6FUDjt9E" target="_blank">Join the Official Discord Server!</a>
-* [Learn how you can contribute by opening a pull request!](./docs/github/Contributing.md)</a>
+* <a href="https://store.steampowered.com/app/1730260/Retro_Gadgets/" target="_blank">Додати гру до очікуваних!</a>
+* <a href="https://discord.com/invite/np6FUDjt9E" target="_blank">Приєднуйтесь до офіційного сервера Discord!</a>
+* [Дізнайтеся, як ви можете зробити свій внесок, відкривши pull request!](./docs/github/Contributing.md)</a>
 
-## Okay... how do I get started?
-Well, <a href="https://store.steampowered.com/app/1730260/Retro_Gadgets/" target="_blank">download the game</a> if you haven't done that already.  
-* [Getting Started](./examples/getting-started.md)
+## Так... з чого ж почати?
+Що ж, <a href="https://store.steampowered.com/app/1730260/Retro_Gadgets/" target="_blank">завантажуйте гру</a> якщо ще не зробили цього.   
+* [Перші Кроки](./examples/getting-started.md)
 
 ## Todo
-- [ ] Finish README.md
-  - [ ] Add proper description about programming in Retro Gadgets
-  - [ ] Add resources for learning Lua
-- [ ] API Documentation
-- [ ] [Contribution Guide](./docs/github/Contributing.md)
-- [ ] *Replace **Download** with **Buy** after the full game releases*
+- [ ] Закінчити README.md
+  - [ ] Додайте належний опис про програмування в Retro Gadgets
+  - [ ] Додати ресурси для вивчення Lua
+- [ ] Документація до API
+- [ ] [Керівництво по внескам](./docs/github/Contributing.md)
+- [ ] *Замінити **Завантажити** на **Купити** після виходу повної версії гри*.
