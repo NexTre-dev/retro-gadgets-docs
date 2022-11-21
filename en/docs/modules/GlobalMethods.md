@@ -43,7 +43,7 @@ Prints red text to the MultiTool console indicating some sort of error or except
 Prints a message to the MultiTool console without adding a new line. Functions identically to `log()` otherwise.
 
 ### writeln(text `string`)
-Does the same thing as `write()`, except adds a new line to the end of the text. Functions identically to `log()`.
+Does the same thing as `write()`, except appends a new line to the end of the text. Functions identically to `log()`.
 
 
 ### setFgColor(colorId `number`)
