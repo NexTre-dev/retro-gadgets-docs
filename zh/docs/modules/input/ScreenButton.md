@@ -16,11 +16,10 @@
 按钮按下时的瞬间返回`true`，常用于只执行一次的操作。
 
 ### ButtonUp 按钮抬起 - `boolean` **[Read only]**
-`true` for the first tick the button stops being held. 
 按钮抬起时的瞬间返回`true`。
 
 
 ## Input sources 输入源
-使用[GamepadChip](../misc/GamepadChip.md) or [KeyboardChip](../misc/KeyboardChip.md)时的属性.
+使用[GamepadChip](../misc/GamepadChip.md) or [KeyboardChip](../misc/KeyboardChip.md)时的属性。
 
 ### InputSource - `InputSource`
