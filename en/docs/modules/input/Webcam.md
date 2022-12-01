@@ -15,3 +15,12 @@ The [VideoChip](../misc/VideoChip.md) this camera is streaming contents to. Only
 
 ### GetRenderBuffer() `RenderBuffer`
 Gets the camera `RenderBuffer`. The render buffer obtained can then be fed to the `DrawRenderBuffer` method of the [VideoChip](../misc/VideoChip.md) module. **Only the VideoChip defined as `RenderTarget` can draw the buffer.**
+
+## Event - `WebcamIsActiveEvent`
+The event emitted as part of the [CPU](../misc/CPU.md) event system.
+
+Sent when the Webcam active state is changed.
+
+### IsActive - `boolean`
+### IsAvailable - `boolean`
+### AccessDenied - `boolean`

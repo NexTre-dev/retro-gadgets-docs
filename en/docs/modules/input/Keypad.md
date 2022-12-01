@@ -16,6 +16,18 @@ Like `ButtonsState`, but only `true` for the frame the corresponding button is i
 ### ButtonsUp - `{{boolean}}` **[Read only]**
 Like `ButtonsState`, but only `true` for the frame the corresponding button is released.
 
+## Event - `KeypadButtonEvent`
+The event emitted as part of the [CPU](../misc/CPU.md) event system.
+
+Sent when a button state is changed.
+
+### X - `number`
+The X index of the button that has changed.
+### Y - `number`
+The Y index of the button that has changed.
+### ButtonDown - `boolean`
+### ButtonUp - `boolean`
+
 ## Hardware
 These properties can be set with the multitool inspector, but cannot be set in software.
 

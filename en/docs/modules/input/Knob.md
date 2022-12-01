@@ -12,3 +12,9 @@ The position of the knob, ranging from -100 (pointing fully left), between 0 (po
 ### IsMoving - `boolean` **[Read only]**
 `true` if the user currently is holding the Knob with the mouse. This should not be used to detect changes, as it is not set when a value is changed with the scrollwheel. This can instead be used to, for example, avoid trying to set the knob to a specific value while it is still being interacted with.
 
+## Event - `KnobValueChangeEvent`
+The event emitted as part of the [CPU](../misc/CPU.md) event system.
+
+Sent when the value is changed.
+
+### Value - `number`

@@ -19,3 +19,11 @@ Properties for use with the [GamepadChip](../misc/GamepadChip.md) or [KeyboardCh
 
 ### InputSourceX - `InputSource`
 ### InputSourceY - `InputSource`
+
+## Event - `StickValueChangeEvent`
+The event emitted as part of the [CPU](../misc/CPU.md) event system.
+
+Sent when the value is changed.
+
+### X - `boolean`
+### Y - `boolean`

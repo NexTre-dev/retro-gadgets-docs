@@ -31,6 +31,15 @@ Properties for use with the [GamepadChip](../misc/GamepadChip.md) or [KeyboardCh
 
 ### InputSource - `InputSource`
 
+## Event - `LedButtonEvent`
+The event emitted as part of the [CPU](../misc/CPU.md) event system.
+
+Sent when the button is pressed or released.
+
+### ButtonDown - `boolean`
+True if this event is for a button beginning to be held.
+### ButtonUp - `boolean`
+True if this event is for when a button stops being held.
 
 ## Hardware
 These properties can be set with the multitool inspector, but cannot be set in software.
