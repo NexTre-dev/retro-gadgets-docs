@@ -2,6 +2,7 @@
 The following is a list of methods that can be called anywhere in your program.
 
 ## Assets
+**❌ These methods have been removed in favor of ROM. Only use this for compatibility purposes.**
 
 ### GetSpriteSheet(name `string`) `SpriteSheet`
 Provides a SpriteSheet from the MultiTool asset list.
