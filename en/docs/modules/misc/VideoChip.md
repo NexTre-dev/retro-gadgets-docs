@@ -73,7 +73,7 @@ Draws a filled triangle with vertices in position1, position2 and position3, in 
 Draws a specific sprite frame from the spriteSheet. **Position** is for the position on the screen. **SpriteSheet** is a `SpriteSheet` loaded from assets. **SpriteX** and **Y** determine the offset for which sprite to draw, based on the zoom grid in the editor **(not pixels)**. **TintColor** allows you to multiply the sprite color (set to `color.white` to draw the sprite as-is). **BackgroundColor** can be set to transparent (`color.clear`) to keep transparency.
 ```lua
 -- Assets
-local spriteSheet:SpriteSheet = GetSpriteSheet("ExampleImageAsset")
+local spriteSheet:SpriteSheet = gdt.ROM.User.SpriteSheets.ExampleImageAsset
 
 -- Hardware
 local video:VideoChip = gdt.VideoChip0
@@ -89,10 +89,10 @@ end
 <img src="../../../assets/docs/VideoChip/SpriteFont.png" width="200" align="right">
 
 ### DrawText(position `vec2`, fontSprite `SpriteSheet`, text `string`, textColor `color`, backgroundColor `color`)
-Writes **text** to the canvas, using **fontSprite** as the font to be displayed. **fontSprite** is a special kind of SpriteSheet representing a textual font that cannot be created normally. As such, the only one that can be used is loaded via `local spriteFont = GetSpriteSheet("Builtin/StandardFont")`.
+Writes **text** to the canvas, using **fontSprite** as the font to be displayed. **fontSprite** is a special kind of SpriteSheet representing a textual font that can be created inside of the sprite editor.
 ```lua
 -- Assets
-local spriteFont = GetSpriteSheet("Builtin/StandardFont")
+local spriteFont = gdt.ROM.System.SpriteSheets.StandardFont
 
 -- Hardware
 local video:VideoChip = gdt.VideoChip0
