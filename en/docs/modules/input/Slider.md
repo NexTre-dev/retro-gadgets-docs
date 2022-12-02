@@ -12,3 +12,10 @@ The positional value of the slider, ranging from 0 to 100.
 
 ### IsMoving - `boolean` **[Read only]**
 `true` if the user currently is holding the Slider with the mouse. This should not be used to detect changes, as it is not set when a value is changed with the scrollwheel. This can instead be used to, for example, avoid trying to set the Slider to a specific value while it is still being interacted with.
+
+## Event - `SliderValueChangeEvent`
+The event emitted as part of the [CPU](../misc/CPU.md) event system.
+
+Sent when the value is changed.
+
+### Value - `number`

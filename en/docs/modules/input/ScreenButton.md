@@ -24,3 +24,14 @@ The [VideoChip](../misc/VideoChip.md) the [Screen](../output/Screen.md) part of 
 Properties for use with the [GamepadChip](../misc/GamepadChip.md) or [KeyboardChip](../misc/KeyboardChip.md).
 
 ### InputSource - `InputSource`
+
+
+## Event - `ScreenButtonEvent`
+The event emitted as part of the [CPU](../misc/CPU.md) event system.
+
+Sent when the button is pressed or released. Identical to [LedButton](./LedButton.md)'s event.
+
+### ButtonDown - `boolean`
+True if this event is for a button beginning to be held.
+### ButtonUp - `boolean`
+True if this event is for when a button stops being held.
