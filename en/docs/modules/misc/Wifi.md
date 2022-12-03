@@ -48,6 +48,19 @@ Clear cookies from all websites.
 ### ClearUrlCookieCache(url `string`)
 Clear cookies from a specific website.
 
-## Events
 
-### WifiWebResponseEvent : {RequestHandle `number`, ResponseCode `number`, IsError `boolean`, ErrorType `string`, ErrorMessage `string`, ContentType `string`, Text `string`, Type `string`}
+## Event - `WifiWebResponseEvent`
+The event emitted as part of the [CPU](./CPU.md) event system.
+
+Sent when a web request is completed.
+
+⚠️ This section requires further investigation.
+
+### RequestHandle - `number`
+### ResponseCode - `number`
+### IsError - `boolean`
+### ErrorType - `string`
+### ErrorMessage - `string`
+### ContentType - `string`
+### Text - `string`
+Text contains the body of the result, represented as a single string.
