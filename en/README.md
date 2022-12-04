@@ -19,5 +19,5 @@ Well, <a href="https://store.steampowered.com/app/1730260/Retro_Gadgets/" target
   - [ ] Add proper description about programming in Retro Gadgets
   - [ ] Add resources for learning Lua
 - [ ] API Documentation
-- [ ] [Contribution Guide](./docs/github/Contributing.md)
+- [X] [Contribution Guide](./docs/github/Contributing.md)
 - [x] *Replace **Download** with **Buy** after the full game releases*
