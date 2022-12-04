@@ -48,6 +48,54 @@ Clear cookies from all websites.
 ### ClearUrlCookieCache(url `string`)
 Clear cookies from a specific website.
 
-## Events
 
-### WifiWebResponseEvent : {RequestHandle `number`, ResponseCode `number`, IsError `boolean`, ErrorType `string`, ErrorMessage `string`, ContentType `string`, Text `string`, Type `string`}
+## Event - `WifiWebResponseEvent`
+The event emitted as part of the [CPU](./CPU.md) event system.
+
+Sent when a web request is completed.
+
+⚠️ This section requires further investigation.
+
+### RequestHandle - `number`
+### ResponseCode - `number`
+The [HTML response code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) provided by the request. Ideally, it should be `200`,"OK".
+### IsError - `boolean`
+Returns true if an error was encountered.
+### ErrorType - `string`
+### ErrorMessage - `string`
+If an error was encountered, displays its information.
+### ContentType - `string`
+Displays the [content type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) of the information returned. For example, an HTML document would have the ContentType of `text/html`.
+### Text - `string`
+Text contains the body of the result, represented as a single string. What this means will depend on the content type of the page. A normal HTML page will return its source, whereas a RESTful API will return stringified JSON data.
+
+
+## Remarks
+
+### How to use
+The wifi chip takes advantage of [CPU](./CPU.md) events, which can be hard to wrap your head around at first. The following is a brief tutorial on how to send a simple GET request.
+
+First, place a Wifi chip and a CPU on your gadget and select your CPU with your Multitool:
+
+![Selecting the CPU](../../../assets/docs/Wifi/SelectCPU.png)
+
+Then, select EventChannels and set the first event channel to be your Wifi chip.
+
+![Setting the event channel](../../../assets/docs/Wifi/EventChannel.gif)
+
+Now go into your CPU's code and add the following function:
+
+```lua
+function eventChannel1(sender:Wifi, arg:WifiWebResponseEvent)
+end
+```
+
+Remember that it MUST be global! Prepending the local keyword will prevent the CPU from recognizing it. Adding this kind of function will cause the CPU to automatically run it whenever the Wifi chip allocated to the first EventChannel finishes a request.
+
+Now, insert code inside of the function to handle the request. You can use arg to access the data returned. For example, to print "OK" if the response code is 200, insert this into your function:
+
+```lua
+if arg.ResponseCode == 200 then
+  log("OK")
+end
+```
