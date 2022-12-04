@@ -15,7 +15,7 @@ The time since the gadget is turned on, expressed in seconds.
 ```lua
 local cpu:CPU = gdt.CPU0
 function update()
-	log(tostring(cpu.Time)) -- 0.521000027656552 (This will vary)
+	print(cpu.Time) -- 0.521000027656552 (This will vary)
 end
 ```
 
@@ -25,7 +25,7 @@ The time elapsed since the last tick, expressed in seconds. Essentially, this is
 ```lua
 local cpu:CPU = gdt.CPU0
 function update()
-	log(tostring(cpu.DeltaTime)) -- At 60/60 tps, this is roughly 0.01666 repeating.
+	print(cpu.DeltaTime) -- At 60/60 tps, this is roughly 0.01666 repeating.
 	-- An example real value is: 0.01600000075995922
 end
 ```
@@ -48,7 +48,7 @@ The length of `EventChannels`, and thus the amount of unique modules you can lis
 ```lua
 -- Example button event, assuming EventChannels[1] = gdt.LedButton0
 function eventChannel1(sender:LedButton, arg:LedButtonEvent)
-	log(tostring(arg.ButtonDown))
+	print(arg.ButtonDown)
 end
 ```
 

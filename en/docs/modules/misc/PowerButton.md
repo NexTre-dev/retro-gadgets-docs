@@ -19,6 +19,6 @@ This is always `false`.
 ```lua
 local button:PowerButton = gdt.PowerButton0
 function update()
-	log(tostring(button.ButtonState)) -- "false", always
+	print(button.ButtonState) -- "false", always
 end
 ```

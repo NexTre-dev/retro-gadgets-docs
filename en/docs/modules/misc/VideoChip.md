@@ -120,8 +120,8 @@ Draws a render buffer (supposedly coming from **Webcam** component) at the desir
 vec2 is a two dimensional vector, usually used to point to screen coordinates. Basically a single value that represents two numbers. You can make a new vec2 easily, and then access its properties with `x` and `y`.
 ```lua
 local pos:vec2 = vec2(20,10)
-log(tostring(pos.X)) -- 20
-log(tostring(pos.Y)) -- 10
+print(pos.X) -- 20
+print(pos.Y) -- 10
 ```
 `vec2(0,0)` is the top left corner of the canvas.
 

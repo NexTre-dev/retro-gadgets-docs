@@ -27,7 +27,7 @@ local reality:RealityChip = gdt.RealityChip0
 
 function update()
 	local percent = reality.Ram.Used/(reality.Ram.Available + reality.Ram.Used)
-	log(tostring(percent*100)) -- 70.83448438808485 (This will vary)
+	print(percent*100) -- 70.83448438808485 (This will vary)
 end
 ```
 

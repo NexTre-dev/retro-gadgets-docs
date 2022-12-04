@@ -23,7 +23,7 @@ The number of channels available depends on the size of the chip. These values m
 ```lua
 local audio:AudioChip = gdt.AudioChip0
 
-log(tostring(audio.ChannelsCount)) -- Returns the appropriate number from the table above
+print(audio.ChannelsCount) -- Returns the appropriate number from the table above
 ```
 
 ### Volume - `number`
