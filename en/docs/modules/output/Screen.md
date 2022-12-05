@@ -8,3 +8,8 @@ The Screen module displays the visuals of a [VideoChip](../misc/VideoChip.md). *
 
 ### VideoChip - `VideoChip`
 The VideoChip this screen belongs to. Multiple screens can be assigned to the same VideoChip to make a larger screen. _This can be set dynamically, but is usually set with the multitool inspector._
+
+### Offset - `vec2`
+The difference between this screen's top-left corner and the top-left corner of the VideoChip canvas.
+### Width - `number`
+### Height - `number`
