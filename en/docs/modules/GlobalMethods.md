@@ -109,13 +109,10 @@ Clears the MultiTool console.
 ### clearToEndLine()
 **⚠️ The functionality of this method has not yet been tested.**
 
-## Lamp
+## Desk
 
-### IsLampOn() `boolean`
-Returns true if the desk lamp is emitting light.
+### desk.getLampState() `boolean`
+Gets the desk lamp state
 
-### TurnLampOn()
-Turns the desk lamp on.
-
-### TurnLampOff()
-Turns the desk lamp off.
+### desk.setLampState(state `boolean`)
+Sets the desk lamp state
