@@ -106,7 +106,7 @@ end
 
 
 ### RasterSprite(position1 `vec2`, position2 `vec2`, position3 `vec2`, position4 `vec2`, spriteSheet `SpriteSheet`, spriteX `number`, spriteY `number`, tintColor `color`, backgroundColor `color` )
-Draws **an entire sprite sheet** mapping it on a quad identified by position1, position2, position3, and position4.
+Draws **an entire sprite sheet** mapping it on a quad identified by position1, position2, position3, and position4. The locations of `position1`, `position2`, `position3` and `position4` are the top-left, top-right, bottom-right and bottom-left respectively. 
 
 ### DrawRenderBuffer(position `vec2`, renderBuffer `RenderBuffer`, width `number`, height `number`)
 Draws a render buffer (supposedly coming from **Webcam** component) at the desired position, width and height.
