@@ -6,7 +6,7 @@
 
 The Gauge is an aesthetic output device that roughly displays a fractional value.
 
-The needle has momentum and will ease and bounce to new values.
+**The needle has momentum and will ease and bounce to new values,** even when the gadget is turned off or initially turned on.
 
 ## Properties
 
