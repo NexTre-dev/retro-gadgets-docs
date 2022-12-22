@@ -88,8 +88,8 @@ end
 
 <img src="../../../assets/docs/VideoChip/SpriteFont.png" width="200" align="right">
 
-⚠️ **This feature is new, as of Retro Gadgets 0.1.3, and not fully tested yet**
 ### DrawCustomSprite(position `vec2`, spriteSheet `SpriteSheet`, spriteOffset `vec2`, spriteSize `vec2`, tintColor `color`, backgroundColor `color`)
+⚠️ **This feature is new, as of Retro Gadgets 0.1.3, and not fully tested yet**
 Draws **a portion** of the spritesheet, `SpriteSheet` (defined by **spriteOffset** and **spriteSize**), without taking the standard grid into account, with **spriteX** and **spriteY** being replaced with **spriteOffset** and **spriteSize**.
 
 ### DrawText(position `vec2`, fontSprite `SpriteSheet`, text `string`, textColor `color`, backgroundColor `color`)
