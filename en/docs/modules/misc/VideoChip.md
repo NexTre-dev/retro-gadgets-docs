@@ -90,7 +90,7 @@ end
 ⚠️ **This feature is new, as of Retro Gadgets 0.1.3, and not fully tested yet**
 Draws **a portion** of the spritesheet, `SpriteSheet` (defined by **spriteOffset** and **spriteSize**), without taking the standard grid into account, with **spriteX** and **spriteY** being replaced with **spriteOffset** and **spriteSize**.
 
-<img src="../../../assets/docs/VideoChip/SpriteFont.png" width="200" align="right">S
+<img src="../../../assets/docs/VideoChip/SpriteFont.png" width="200" align="right">
 
 ### DrawText(position `vec2`, fontSprite `SpriteSheet`, text `string`, textColor `color`, backgroundColor `color`)
 Writes **text** to the canvas, using **fontSprite** as the font to be displayed. **fontSprite** is a special kind of SpriteSheet representing a textual font that can be created inside of the sprite editor.
