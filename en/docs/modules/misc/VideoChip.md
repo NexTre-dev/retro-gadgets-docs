@@ -86,6 +86,10 @@ end
 ```
 <img src="../../../assets/docs/VideoChip/ExampleImageAsset.png" style="max-width: 400px">
 
+### DrawCustomSprite(position `vec2`, spriteSheet `SpriteSheet`, spriteOffset `vec2`, spriteSize `vec2`, tintColor `color`, backgroundColor `color`)
+⚠️ **This feature is new, as of Retro Gadgets 0.1.3, and not fully tested yet.**  
+Draws **a portion** of the spritesheet, `SpriteSheet` (defined by **spriteOffset** and **spriteSize**), without taking the standard grid into account, with **spriteX** and **spriteY** being replaced with **spriteOffset** and **spriteSize**.
+
 <img src="../../../assets/docs/VideoChip/SpriteFont.png" width="200" align="right">
 
 ### DrawText(position `vec2`, fontSprite `SpriteSheet`, text `string`, textColor `color`, backgroundColor `color`)
@@ -107,6 +111,10 @@ end
 
 ### RasterSprite(position1 `vec2`, position2 `vec2`, position3 `vec2`, position4 `vec2`, spriteSheet `SpriteSheet`, spriteX `number`, spriteY `number`, tintColor `color`, backgroundColor `color` )
 Draws **an entire sprite sheet** mapping it on a quad identified by position1, position2, position3, and position4. The locations of `position1`, `position2`, `position3` and `position4` are the top-left, top-right, bottom-right and bottom-left respectively. 
+
+### RasterCustomSprite(position1 `vec2`, position2 `vec2`, position3 `vec2`, position4 `vec2`, spriteSheet `SpriteSheet`, spriteOffset `vec2`, spriteSize `vec2`, tintColor `color`, backgroundColor `color`)
+⚠️ **This feature is new, as of Retro Gadgets 0.1.3, and not fully tested yet.**  
+Draws a portion of the spritesheet, `SpriteSheet` (defined by `spriteOffset` and `spriteSize`), without taking the standard grid into account, onto a quad defined by `position1`, `position2`, `position3`, and `position4`. The locations of `position1`, `position2`, `position3` and `position4` are the top-left, top-right, bottom-right and bottom-left respectively, as with `RasterSprite`.
 
 ### DrawRenderBuffer(position `vec2`, renderBuffer `RenderBuffer`, width `number`, height `number`)
 Draws a render buffer (supposedly coming from **Webcam** component) at the desired position, width and height.
