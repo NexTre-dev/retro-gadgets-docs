@@ -108,11 +108,3 @@ Clears the MultiTool console.
 
 ### clearToEndLine()
 **⚠️ The functionality of this method has not yet been tested.**
-
-## Desk
-
-### desk.getLampState() `boolean`
-Gets the desk lamp state
-
-### desk.setLampState(state `boolean`)
-Sets the desk lamp state
