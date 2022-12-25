@@ -110,7 +110,7 @@ end
 
 
 ### RasterSprite(position1 `vec2`, position2 `vec2`, position3 `vec2`, position4 `vec2`, spriteSheet `SpriteSheet`, spriteX `number`, spriteY `number`, tintColor `color`, backgroundColor `color` )
-Draws **an entire sprite sheet** mapping it on a quad identified by position1, position2, position3, and position4. The locations of `position1`, `position2`, `position3` and `position4` are the top-left, top-right, bottom-right and bottom-left respectively. 
+Draws a specific sprite frame from the spriteSheet mapping it on a quad identified by position1, position2, position3, and position4. The locations of `position1`, `position2`, `position3` and `position4` are the top-left, top-right, bottom-right and bottom-left respectively. 
 
 ### RasterCustomSprite(position1 `vec2`, position2 `vec2`, position3 `vec2`, position4 `vec2`, spriteSheet `SpriteSheet`, spriteOffset `vec2`, spriteSize `vec2`, tintColor `color`, backgroundColor `color`)
 ⚠️ **This feature is new, as of Retro Gadgets 0.1.3, and not fully tested yet.**  
