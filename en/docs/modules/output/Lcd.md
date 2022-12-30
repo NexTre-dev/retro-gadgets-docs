@@ -19,7 +19,7 @@ display.Text = "Hello! How are  you today?"
 ```
 ![Text on an Lcd](../../../assets/docs/Lcd/Lcd.png)
 
-#### Examples
+#### Formatting lines automatically
 
 You can use Lua's built-in function [`string.format`](https://www.lua.org/manual/5.3/manual.html#pdf-string.format) to organize each line independently from each other, assuming they both are no longer than 16 characters.
 
