@@ -13,6 +13,18 @@ The KeyboardChip is used to get input from a connected keyboard. When connected 
 
 ### GetButtonAxis(name `InputName`) `InputSource`
 
+## Event - `KeyboardChipEvent`
+The event emitted as part of the [CPU](./CPU.md) event system.
+
+Sent when a key is pressed or unpressed.
+
+### ButtonDown `boolean`
+True when a button is down
+### ButtonUp `boolean`
+True when a button gets releaed
+### InputName `InputName`
+Name of the key being pressed/unpressed
+
 ## Input Names **[Read only]**
 Input names can be accessed by `KeyboardChip.`nameOfInput, and are listed below.
 - `Return`
@@ -151,6 +163,37 @@ Input names can be accessed by `KeyboardChip.`nameOfInput, and are listed below.
 - `Menu`
 
 ## Remarks
+
+### How to use
+The keyboard chip takes advantage of [CPU](.CPU.md) events, which can be hard to wrap your head around at first. The following is a brief tutorial on how to get the name of that's currently being pressed.
+
+First, place a keyboard chip and a CPU on your gadget and select the CPU with the Multitool:
+
+![Selecting the CPU](./../../../assets/docs/KeyboardChip/SelectingCPU.png)
+
+Then, select EventChannels and set the first channel to the keyboard chip.
+
+![Setting the event channel](../../../assets/docs/KeyboardChip/EventChannel.png)
+
+Now go into your CPU's code and add the following function:
+
+```lua
+function eventChannel1(sender:KeyboardChip, arg:KeyboardChipEvent)
+end
+```
+Remember that it MUST be global! Prepending the local keyword will prevent the CPU from recognizing it. Adding this kind of function will cause the CPU to automatically run it whenever the user presses or unpresses a key.
+
+Now, insert code inside of the function to print whether a key is being pressed or no longer being pressed:
+
+```lua
+if arg.ButtonDown then
+    log(tostring(arg.InputName) .. " is pressed")
+elseif arg.ButtonUp then
+    log(tostring(arg.InputName) .. " is not pressed anymore")
+end
+```
+
+![Multitool output](./../../../assets/docs/KeyboardChip/output.png)
 
 ### Multitool configuration
 
