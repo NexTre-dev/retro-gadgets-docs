@@ -16,14 +16,14 @@ The KeyboardChip is used to get input from a connected keyboard. When connected 
 ## Event - `KeyboardChipEvent`
 The event emitted as part of the [CPU](./CPU.md) event system.
 
-Sent when a key is pressed or unpressed.
+Sent when a key is pressed or released.
 
 ### ButtonDown `boolean`
 True when a button is down
 ### ButtonUp `boolean`
 True when a button gets releaed
 ### InputName `InputName`
-Name of the key being pressed/unpressed
+Name of the key being pressed/released
 
 ## Input Names **[Read only]**
 Input names can be accessed by `KeyboardChip.`nameOfInput, and are listed below.
@@ -165,7 +165,7 @@ Input names can be accessed by `KeyboardChip.`nameOfInput, and are listed below.
 ## Remarks
 
 ### How to use
-The keyboard chip takes advantage of [CPU](.CPU.md) events, which can be hard to wrap your head around at first. The following is a brief tutorial on how to get the name of that's currently being pressed.
+The keyboard chip takes advantage of [CPU](.CPU.md) events, which can be hard to wrap your head around at first. The following is a brief tutorial on how to log the name of the key that's currently being pressed or released.
 
 First, place a keyboard chip and a CPU on your gadget and select the CPU with the Multitool:
 
