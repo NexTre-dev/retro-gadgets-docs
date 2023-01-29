@@ -17,7 +17,7 @@ You can download the mat template for Gimp, Photoshop and Paint.NET here:
 
 ### Getting started
 
-First, open the template in your whatever photo editing software you'd like (I will be using [Paint.NET](https://www.getpaint.net/) but you can use any photo editing software you want)
+First, open the template in whatever photo editing software you'd like (I will be using [Paint.NET](https://www.getpaint.net/) but you can use any photo editing software you want)
 
 Then, make sure you're on the background layer and use the magic wand to select the background color:
 
