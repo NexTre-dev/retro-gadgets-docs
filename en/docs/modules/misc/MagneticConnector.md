@@ -34,4 +34,4 @@ Sent when a `MagneticConnector` is connected to another.
 Always return `MagneticConnectorEvent`.
 
 ## Remarks
-This should hopefully report more information in the full release. For now, have a limited set of checkable configurations, or keep track of all connectors and detect which two switch when boards are connected or disconnected, in order to track what is connected to what.
+This should hopefully report more information in the full release.
