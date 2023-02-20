@@ -15,12 +15,6 @@ The state of the physical button on the connector. `true` if the button is being
 ### IsConnected - `boolean` **[Read only]**
 `true` if the connector is connected to another one.
 
-### Motherboard - `Motherboard` **[Read only]**
-The `Motherboard` attached with this `MagneticConnector`.
-
-### Type - `string` **[Read only]**
-Always returns `MagneticConnectorEvent`.
-
 ## Event - `MagneticConnectorEvent`
 The event emitted as part of the [CPU](./CPU.md) event system.
 
@@ -28,6 +22,3 @@ Sent when a `MagneticConnector` is connected to another.
 
 ### IsConnected - `boolean` **[Read only]**
 `true` if the connector is connected to another one.
-
-### Type - `string` **[Read only]**
-Always return `MagneticConnectorEvent`.
