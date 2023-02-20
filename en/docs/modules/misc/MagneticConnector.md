@@ -31,6 +31,3 @@ Sent when a `MagneticConnector` is connected to another.
 
 ### Type - `string` **[Read only]**
 Always return `MagneticConnectorEvent`.
-
-## Remarks
-This should hopefully report more information in the full release.
