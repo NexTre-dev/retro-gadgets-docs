@@ -20,5 +20,5 @@ The event emitted as part of the [CPU](./CPU.md) event system.
 
 Sent when a `MagneticConnector` is connected to another.
 
-### IsConnected - `boolean` **[Read only]**
+### IsConnected - `boolean`
 `true` if the connector is connected to another one.
