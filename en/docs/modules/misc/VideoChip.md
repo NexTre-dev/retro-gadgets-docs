@@ -33,7 +33,13 @@ end
 ### SetPixel(position `vec2`, color `color`)
 Sets the pixel at the specified position to the specified **color**.
 
+### SetPixelData(PixelData `PixelData`)
+⚠️ **This feature is new, as of Retro Gadgets 0.1.5, and not fully tested yet.**  
+Draws PixelData to the screen. Provided PixelData *needs* to be the same size as the VideoChip.
+
+
 <img src="../../../assets/docs/VideoChip/PixelGrid.png" width="200" align="right">
+
 
 ### DrawPointGrid(gridOffset `vec2`, dotsDistance `number`, color `color`)
 Draws a dotted grid on the **entire display area**, with an offset. The dotsDistance parameter express the distance in pixels, on both axis, between dots. This is a strange function, but can be uses for backgrounds.
@@ -118,6 +124,53 @@ Draws a portion of the spritesheet, `SpriteSheet` (defined by `spriteOffset` and
 
 ### DrawRenderBuffer(position `vec2`, renderBuffer `RenderBuffer`, width `number`, height `number`)
 Draws a render buffer (supposedly coming from **Webcam** component) at the desired position, width and height.
+
+
+## `PixelData`
+⚠️ **This feature is new, as of Retro Gadgets 0.1.5, and not fully tested yet.**  
+<!-- I don't know if this is the best description for it -->
+PixelData is a sort of buffer you can write to, and later display.
+It's a faster way to draw indivdual pixels to the screen compared to `SetPixel` on the VideoChip.
+
+### new(width `number`, height `number`, color `color`)
+Constructor used to create PixelData. `width` and `height` represent the size of it, while `color` defines the color with which it is initialized.
+
+### After creating a PixelData you can use methods below to manipulate it.
+
+### Clear(color `color`)
+Clears the PixelData to a specified color.
+
+### SetPixel(x `number`, y `number`, color `color`) --> `color`
+Sets the specified pixel to the color provided.
+
+### GetPixel(x `number`, y `number`) --> `color`
+Returns the color of a pixel on the `x` and `y` axis specified.
+
+### Height - `number` **[Read only]**
+<!-- Making it readonly because when you try to write to the variable, it demands `userdata` instead of number -->
+Height of the PixelData
+
+### Width - `number` **[Read only]**
+<!-- Same as above-->
+Width of the PixelData
+
+## Example usage
+<img src="./../../../assets/docs/VideoChip/PixelData.gif" width="250" align="right">
+
+```lua
+local vc = gdt.VideoChip0
+local pixelData = PixelData.new(128, 128, color.clear) -- Must be the same size as the VideoChip
+
+function update()
+	for x = 1, pixelData.Width do
+		for y = 1, pixelData.Height do
+			pixelData:SetPixel(x, y, Color(math.random() * 256, math.random() * 256, math.random() * 256))
+		end
+	end
+	vc:SetPixelData(pixelData)
+end
+```
+
 
 
 ## Remarks
