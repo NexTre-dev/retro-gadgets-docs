@@ -34,8 +34,8 @@ end
 Sets the pixel at the specified position to the specified **color**.
 
 ### SetPixelData(PixelData `PixelData`)
-⚠️ **This feature is new, as of Retro Gadgets 0.1.5, and not fully tested yet.**  
-Draws PixelData to the screen. Provided PixelData *needs* to be the same size as the VideoChip.
+⚠️ **This feature is new and undocumented as of Retro Gadgets 0.1.5, things might change in the future.**  
+Draws PixelData to the screen. **Provided PixelData must to be the same size as the VideoChip.**
 
 
 <img src="../../../assets/docs/VideoChip/PixelGrid.png" width="200" align="right">
@@ -126,45 +126,56 @@ Draws a portion of the spritesheet, `SpriteSheet` (defined by `spriteOffset` and
 Draws a render buffer (supposedly coming from **Webcam** component) at the desired position, width and height.
 
 
-## `PixelData`
-⚠️ **This feature is new, as of Retro Gadgets 0.1.5, and not fully tested yet.**  
-<!-- I don't know if this is the best description for it -->
-PixelData is a sort of buffer you can write to, and later display.
-It's a faster way to draw indivdual pixels to the screen compared to `SetPixel` on the VideoChip.
+# `PixelData`
+⚠️ **This feature is new and undocumented as of Retro Gadgets 0.1.5, things might change in the future.**
 
-### new(width `number`, height `number`, color `color`)
-Constructor used to create PixelData. `width` and `height` represent the size of it, while `color` defines the color with which it is initialized.
+PixelData is a buffer you can draw to, similar to the VideoChip itself.  
+As PixelData lives entirely in Lua, draw calls on it (such as `SetPixel`) are much faster the same call on the VideoChip. You can later draw the entire PixelData to a VideoChip at once.
 
-### After creating a PixelData you can use methods below to manipulate it.
+## Properties
+
+### Height - `number` **[Read only]**
+<!-- Making it readonly because when you try to write to the variable, it demands `userdata` instead of number -->
+Height of the PixelData.
+
+### Width - `number` **[Read only]**
+<!-- Same as above-->
+Width of the PixelData.
+
+## Constructors
+
+### new(width `number`, height `number`, color `color`) `PixelData`
+Creates a new instance of PixelData. `color` defines the color every pixel will be when initialized.
+
+## Methods
 
 ### Clear(color `color`)
 Clears the PixelData to a specified color.
 
-### SetPixel(x `number`, y `number`, color `color`) --> `color`
+### SetPixel(x `number`, y `number`, color `color`)
 Sets the specified pixel to the color provided.
 
-### GetPixel(x `number`, y `number`) --> `color`
+### GetPixel(x `number`, y `number`) `color`
 Returns the color of a pixel on the `x` and `y` axis specified.
-
-### Height - `number` **[Read only]**
-<!-- Making it readonly because when you try to write to the variable, it demands `userdata` instead of number -->
-Height of the PixelData
-
-### Width - `number` **[Read only]**
-<!-- Same as above-->
-Width of the PixelData
 
 ## Example usage
 <img src="./../../../assets/docs/VideoChip/PixelData.gif" width="250" align="right">
 
 ```lua
 local vc = gdt.VideoChip0
-local pixelData = PixelData.new(128, 128, color.clear) -- Must be the same size as the VideoChip
+local pixelData = PixelData.new(128, 128, color.clear) -- Has to be the same size as the VideoChip.
+local z = 0
 
 function update()
-	for x = 1, pixelData.Width do
-		for y = 1, pixelData.Height do
-			pixelData:SetPixel(x, y, Color(math.random() * 256, math.random() * 256, math.random() * 256))
+	z += 0.01
+	for y = 1, 128 do
+ 		for x = 1, 128 do
+			-- Get perlin noise value
+			local noise = math.noise((x + 0.5) / 16, (y + 0.5) / 16, z)
+			-- Convert to color
+			local color_value = math.floor((noise + 1) / 2 * 255)
+			local col = Color(color_value, color_value, color_value)
+			pixelData:SetPixel(x, y, col)
 		end
 	end
 	vc:SetPixelData(pixelData)
