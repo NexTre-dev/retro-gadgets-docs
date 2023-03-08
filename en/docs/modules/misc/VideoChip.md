@@ -184,11 +184,9 @@ end
 
 
 
-## Remarks
+# Related types
 
-### Related types
-
-#### `vec2`
+## `vec2`
 vec2 is a two dimensional vector, usually used to point to screen coordinates. Basically a single value that represents two numbers. You can make a new vec2 easily, and then access its properties with `x` and `y`.
 ```lua
 local pos:vec2 = vec2(20,10)
@@ -199,7 +197,7 @@ print(pos.Y) -- 10
 
 There is also vec3, but it is not usually used for screens. You may use it for organization.
 
-#### `color`
+## `color`
 `color` represents a color, and is used for LEDs or for drawing to the screen. You may construct a color in a few ways.
 ```lua
 Color(r, g, b) -- Values 0-255
@@ -210,8 +208,9 @@ There are a few built in colors, such as `color.blue` or `color.black`. In the f
 
 You may access `R`, `G`, `B`, and `A` on a `color`.
 
-#### `SpriteSheet`
+## `SpriteSheet`
 See `DrawSprite(...)`
 
-### Example project
+
+# Additional resources
 The built-in **RasterBoy** gadget is great to get a better understanding of how graphics work. 
