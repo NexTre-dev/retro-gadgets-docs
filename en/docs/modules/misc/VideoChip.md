@@ -126,10 +126,10 @@ Draws a portion of the spritesheet, `SpriteSheet` (defined by `spriteOffset` and
 Draws a render buffer (supposedly coming from **Webcam** component) at the desired position, width and height.
 
 
-# `PixelData`
+# PixelData
 ⚠️ **This feature is new and undocumented as of Retro Gadgets 0.1.5, things might change in the future.**
 
-PixelData is a buffer you can draw to, similar to the VideoChip itself.  
+`PixelData` are buffers you can draw to, similar to the VideoChip itself.  
 As PixelData lives entirely in Lua, draw calls on it (such as `SetPixel`) are much faster the same call on the VideoChip. You can later draw the entire PixelData to a VideoChip at once.
 
 ## Properties
