@@ -33,7 +33,13 @@ end
 ### SetPixel(position `vec2`, color `color`)
 Sets the pixel at the specified position to the specified **color**.
 
+### SetPixelData(PixelData `PixelData`)
+⚠️ **This feature is new and undocumented as of Retro Gadgets 0.1.5, things might change in the future.**  
+Draws PixelData to the screen. **Provided PixelData must to be the same size as the VideoChip.**
+
+
 <img src="../../../assets/docs/VideoChip/PixelGrid.png" width="200" align="right">
+
 
 ### DrawPointGrid(gridOffset `vec2`, dotsDistance `number`, color `color`)
 Draws a dotted grid on the **entire display area**, with an offset. The dotsDistance parameter express the distance in pixels, on both axis, between dots. This is a strange function, but can be uses for backgrounds.
@@ -120,11 +126,67 @@ Draws a portion of the spritesheet, `SpriteSheet` (defined by `spriteOffset` and
 Draws a render buffer (supposedly coming from **Webcam** component) at the desired position, width and height.
 
 
-## Remarks
+# PixelData
+⚠️ **This feature is new and undocumented as of Retro Gadgets 0.1.5, things might change in the future.**
 
-### Related types
+`PixelData` are buffers you can draw to, similar to the VideoChip itself.  
+As PixelData lives entirely in Lua, draw calls on it (such as `SetPixel`) are much faster the same call on the VideoChip. You can later draw the entire PixelData to a VideoChip at once.
 
-#### `vec2`
+## Properties
+
+### Height - `number` **[Read only]**
+<!-- Making it readonly because when you try to write to the variable, it demands `userdata` instead of number -->
+Height of the PixelData.
+
+### Width - `number` **[Read only]**
+<!-- Same as above-->
+Width of the PixelData.
+
+## Constructors
+
+### new(width `number`, height `number`, color `color`) `PixelData`
+Creates a new instance of PixelData. `color` defines the color every pixel will be when initialized.
+
+## Methods
+
+### Clear(color `color`)
+Clears the PixelData to a specified color.
+
+### SetPixel(x `number`, y `number`, color `color`)
+Sets the specified pixel to the color provided.
+
+### GetPixel(x `number`, y `number`) `color`
+Returns the color of a pixel on the `x` and `y` axis specified.
+
+## Example usage
+<img src="./../../../assets/docs/VideoChip/PixelData.gif" width="250" align="right">
+
+```lua
+local vc = gdt.VideoChip0
+local pixelData = PixelData.new(128, 128, color.clear) -- Has to be the same size as the VideoChip.
+local z = 0
+
+function update()
+	z += 0.01
+	for y = 1, 128 do
+ 		for x = 1, 128 do
+			-- Get perlin noise value
+			local noise = math.noise((x + 0.5) / 16, (y + 0.5) / 16, z)
+			-- Convert to color
+			local color_value = math.floor((noise + 1) / 2 * 255)
+			local col = Color(color_value, color_value, color_value)
+			pixelData:SetPixel(x, y, col)
+		end
+	end
+	vc:SetPixelData(pixelData)
+end
+```
+
+
+
+# Related types
+
+## `vec2`
 vec2 is a two dimensional vector, usually used to point to screen coordinates. Basically a single value that represents two numbers. You can make a new vec2 easily, and then access its properties with `x` and `y`.
 ```lua
 local pos:vec2 = vec2(20,10)
@@ -135,7 +197,7 @@ print(pos.Y) -- 10
 
 There is also vec3, but it is not usually used for screens. You may use it for organization.
 
-#### `color`
+## `color`
 `color` represents a color, and is used for LEDs or for drawing to the screen. You may construct a color in a few ways.
 ```lua
 Color(r, g, b) -- Values 0-255
@@ -146,8 +208,9 @@ There are a few built in colors, such as `color.blue` or `color.black`. In the f
 
 You may access `R`, `G`, `B`, and `A` on a `color`.
 
-#### `SpriteSheet`
+## `SpriteSheet`
 See `DrawSprite(...)`
 
-### Example project
+
+# Additional resources
 The built-in **RasterBoy** gadget is great to get a better understanding of how graphics work. 
