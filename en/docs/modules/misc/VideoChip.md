@@ -37,6 +37,9 @@ Sets the pixel at the specified position to the specified **color**.
 ⚠️ **This feature is new and undocumented as of Retro Gadgets 0.1.5, things might change in the future.**  
 Draws PixelData to the screen. **Provided PixelData must to be the same size as the VideoChip.**
 
+### BlitPixelData(pos `vec2`, PixelData `PixelData`)
+⚠️ **This feature is new and undocumented as of Retro Gadgets 0.1.5, things might change in the future.**  
+Draws PixelData to the screen on the specified coordinates. Provided PixelData doesn't have to be the same size as the VideoChip.
 
 <img src="../../../assets/docs/VideoChip/PixelGrid.png" width="200" align="right">
 
@@ -163,7 +166,7 @@ Returns the color of a pixel on the `x` and `y` axis specified.
 
 ```lua
 local vc = gdt.VideoChip0
-local pixelData = PixelData.new(128, 128, color.clear) -- Has to be the same size as the VideoChip.
+local pixelData = PixelData.new(128, 128, color.clear)
 local z = 0
 
 function update()
@@ -178,6 +181,11 @@ function update()
 			pixelData:SetPixel(x, y, col)
 		end
 	end
+	--[[
+		Here the PixelData *has* to be the same size as the
+		VideoChip because we're using `SetPixelData`
+		instead of `BlitPixelData`.
+	--]]
 	vc:SetPixelData(pixelData)
 end
 ```
